@@ -1,0 +1,101 @@
+@import '../../../scss/commons/commons.scss';
+.QuickInformation {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  min-height: 100%;
+  // background-color: $background-light;
+  background-color: $background-transparent;
+  border-radius: $border-radius-card;
+  // box-shadow: $box-shadow-card;
+  // h3 {
+  //   height: 10%;
+  //   max-height: 10%;
+  // }
+  .scroll-information-cards {
+    // position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    .information-cards-container {
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+      max-height: 100%;
+      min-height: 100%;
+      padding: 0.1rem 0.1rem;
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      .information-card {
+        min-width: max-content;
+        height: 100%;
+        max-height: 100%;
+        min-height: 100%;
+        flex-grow: 1;
+        flex-shrink: 1;
+        box-shadow: $box-shadow-inner-card;
+        border-radius: $border-radius-card;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        &.no-background {
+          background: none;
+          padding: 0.1rem;
+        }
+
+        // padding: 0.5rem 0.5rem;
+        &-head {
+          padding: 0.5rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 70%;
+          color: $font-secondary;
+          border-top-left-radius: $border-radius-card;
+          border-top-right-radius: $border-radius-card;
+          background: linear-gradient(225deg, rgba(249, 235, 1, 0.6), $background-primary 60%);
+
+          perspective: 12000;
+
+          .label {
+            width: 100%;
+          }
+          .sub-label {
+            width: 100%;
+          }
+          svg {
+            font-size: 1.5rem;
+            color: $font-blue;
+          }
+        }
+        .information-content {
+          width: 100%;
+          height: 30%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-bottom-left-radius: $border-radius-card;
+          border-bottom-right-radius: $border-radius-card;
+        }
+        .recharts-responsive-container {
+          display: flex;
+          justify-content: space-between;
+          height: 100%;
+          min-height: 100%;
+          width: 100%;
+          min-width: 10rem !important;
+        }
+      }
+    }
+  }
+}

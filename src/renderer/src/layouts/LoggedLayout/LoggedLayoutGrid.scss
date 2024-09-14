@@ -1,0 +1,59 @@
+@import '../../scss/commons/commons.scss';
+.LoggedLayout {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background-color: white;
+  .content {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    background-color: blue;
+    display: grid;
+    grid-template-columns: 0.2fr 2fr 2fr;
+    grid-template-rows: minmax(0, 0.2fr) minmax(0, 2fr) minmax(0, 2fr);
+    grid-template-areas:
+      'left-menu top-bar top-bar'
+      'left-menu children-content children-content'
+      'left-menu children-content children-content';
+    .left-menu {
+      grid-area: left-menu;
+      background-color: $background-primary;
+      box-shadow: 0.4rem 0.05rem 0.8rem #0005;
+
+      width: 100%;
+      transition:
+        transform 3s ease,
+        background-color 3s ease;
+      // width 3s ease;
+      &.expanded {
+        width: 300px;
+      }
+      &.collapsed {
+        width: 100%;
+      }
+    }
+    .top-bar {
+      grid-area: top-bar;
+      text-align: end;
+      font-family: $font-family-app;
+      padding: 0.5rem 1rem 0 0;
+      background-color: $background-light;
+      // box-shadow: 0.4rem 0.05rem 0.8rem #0005;
+      z-index: 2;
+    }
+    .shadow-top-bar {
+      background-color: #00000000;
+      grid-column: 1/4;
+      grid-row: 1/2;
+      box-shadow: 0.4rem 0.05rem 0.8rem #0005;
+      z-index: 1;
+    }
+    .children-content {
+      grid-area: children-content;
+      background-color: $background-light;
+      overflow-y: auto;
+    }
+  }
+}

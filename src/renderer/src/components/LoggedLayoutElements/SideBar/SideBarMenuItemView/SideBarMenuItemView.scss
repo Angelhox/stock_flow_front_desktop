@@ -1,0 +1,99 @@
+@import '../../../../scss/commons/commons.scss';
+.SideBarMenuItemView {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  margin: 2px 5px;
+  // background-color: green;
+  padding: 0 0.2rem;
+  a {
+    color: white;
+    text-decoration: none;
+    // background-color: $background-secondary;
+    display: block;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    transition: background-color 0.4s ease;
+    &.expanded {
+      // margin-right: 13px;
+      color: $font-dark;
+    }
+    .ItemContent {
+      display: flex;
+      // background-color: green;
+      flex-direction: row;
+      align-items: center;
+      overflow: hidden;
+      width: 100%;
+      min-width: 100%;
+      white-space: nowrap;
+      @include transition(width);
+      &.collapsed {
+        width: 35px;
+        justify-content: center;
+        span {
+          display: none;
+        }
+      }
+      .icon {
+        width: 32px;
+        height: 32px;
+        svg {
+          font-size: 32px;
+          color: $background-secondary;
+        }
+      }
+      .label {
+        font-weight: 500;
+        margin-left: 10px;
+        overflow: hidden;
+      }
+    }
+    &:hover {
+      background-color: $secondary-color;
+      color: white;
+      opacity: 0.6;
+      .icon {
+        svg {
+          color: $font-light;
+        }
+      }
+      // margin-right: 13px;
+    }
+    &:hover {
+      & + .tooltip {
+        display: inline-block;
+        animation-duration: 0.4s;
+        animation-name: tooltip;
+      }
+    }
+    &.active {
+      background-color: white;
+      // margin-right: 13px;
+      .icon {
+        svg {
+          color: $font-primary-dark;
+        }
+      }
+    }
+  }
+  .tooltip {
+    color: white;
+    position: absolute;
+    background-color: black;
+    left: 100px;
+    padding: 10px;
+    border-radius: $border-radius-input;
+    text-transform: capitalize;
+    display: none;
+  }
+}
+@keyframes tooltip {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

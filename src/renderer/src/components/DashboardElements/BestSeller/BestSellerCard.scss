@@ -1,0 +1,21 @@
+@import '../../../scss/commons/commons.scss';
+.best-seller-card {
+  min-height: fit-content;
+  min-width: fit-content;
+  box-shadow: $box-shadow-inner-card;
+  border-radius: $border-radius-card;
+  padding: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  svg {
+    font-size: 1.5rem;
+    color: gold;
+  }
+  .codigo {
+    color: $font-red;
+  }
+  .quantity {
+    color: $font-green;
+  }
+}

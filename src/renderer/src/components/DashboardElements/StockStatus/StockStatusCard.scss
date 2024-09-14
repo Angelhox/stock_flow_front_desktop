@@ -1,0 +1,39 @@
+@import '../../../scss/commons/commons.scss';
+.alert-status-card {
+  min-width: max-content;
+  max-height: 100%;
+  flex-grow: 1;
+  box-shadow: $box-shadow-inner-card;
+  border-radius: $border-radius-card;
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.5rem;
+  // margin: 0 0.5rem;
+  svg {
+    font-size: 2rem;
+  }
+  .less {
+    color: $font-primary-dark;
+  }
+  .least {
+    color: $font-red;
+  }
+  .alert-data {
+    .alert-name {
+      font-weight: 600;
+    }
+    .alert-code {
+      color: $font-red;
+    }
+  }
+  .quantity {
+    &.less {
+      color: $font-green;
+    }
+    &.least {
+      color: $font-red;
+    }
+  }
+}

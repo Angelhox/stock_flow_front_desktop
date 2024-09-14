@@ -1,0 +1,89 @@
+@import '../../../../scss/commons/commons.scss';
+.SideBarMenu {
+  // position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  // grid-template-rows: minmax(0, 0.2fr) minmax(0, 1fr) minmax(0, 3fr);
+  grid-template-rows: 0.2fr 1fr 3fr;
+  // display: flex;
+  // flex-direction: column;
+  z-index: 2;
+  @include transition(width);
+  // &.expanded {
+  //   width: 300px;
+  // }
+  // &.collapsed {
+  //   // width: 69px;
+  // }
+  .menuButton {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: $background-light;
+    // height: 2.5rem;
+    box-shadow: 0 0.1rem 0.8rem #0005;
+
+    .hamburgerIcon {
+      cursor: pointer;
+      border: none;
+      background-color: transparent;
+      color: $font-light;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      svg {
+        color: $font-primary-dark;
+        font-size: 2rem;
+      }
+    }
+  }
+  .card-view-container {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    width: 100%;
+    height: fit-content;
+    min-height: fit-content;
+    max-height: fit-content;
+  }
+  .menu-items-cell {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    // background-color: green;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    display: flex;
+    .menu-items-container {
+      width: 100%;
+      max-width: 100%;
+      min-height: 100%;
+      max-height: 100%;
+      height: 100%;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+/* Monitores grandes */
+@media (min-width: 1200px) {
+}
+/* Escritorios comunes y laptops grandes */
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+/* Laptops medianos y pequeños */
+@media (min-width: 768px) and (max-width: 991px) {
+}
+/* Escritorios pequeños */
+@media (max-width: 767px) {
+}
