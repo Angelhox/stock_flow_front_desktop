@@ -12,33 +12,39 @@ export const LoginForm = (): JSX.Element => {
     navigate('/home')
   }
   return (
-    <div
-      className="LoginForm
-    "
-    >
-      <h1>Log in</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="login-input-group">
-          <label htmlFor="user">Usuario</label>
-          <input type="text" id="user" />
-          <p className="error">Error en el usuario</p>
-        </div>
-        <div className="login-input-group password">
-          <label htmlFor="password">Contraseña</label>
-          <input type={showPassword ? 'text' : 'password'} id="password" className="password" />
+    <>
+      <div className="app-name">
+        <h2>stockFlow</h2>
+        <p>Control de Inventario</p>
+      </div>
+      <div
+        className="LoginForm
+        "
+      >
+        <form onSubmit={handleSubmit}>
+          <h1>Inicio de sesion</h1>
+          <div className="login-input-group">
+            <label htmlFor="user">Usuario</label>
+            <input type="text" id="user" />
+            <p className="error">Error en el usuario</p>
+          </div>
+          <div className="login-input-group password">
+            <label htmlFor="password">Contraseña</label>
+            <input type={showPassword ? 'text' : 'password'} id="password" className="password" />
 
-          {showPassword ? (
-            <BiShow onClick={handleShowPassword} />
-          ) : (
-            <BiHide onClick={handleShowPassword} />
-          )}
-        </div>
-        <p className="error-out">Error en la Contraseña</p>
-        <p className="forgot-password">¿Olvidaste tu Contraseña?</p>
-        <div className="buttons">
-          <button>Iniciar Sesion</button>
-        </div>
-      </form>
-    </div>
+            {showPassword ? (
+              <BiShow onClick={handleShowPassword} />
+            ) : (
+              <BiHide onClick={handleShowPassword} />
+            )}
+            <p className="error-out">Error en la Contraseña</p>
+          </div>
+          <p className="forgot-password">¿Olvidaste tu Contraseña?</p>
+          <div className="buttons">
+            <button>Iniciar Sesion</button>
+          </div>
+        </form>
+      </div>
+    </>
   )
 }

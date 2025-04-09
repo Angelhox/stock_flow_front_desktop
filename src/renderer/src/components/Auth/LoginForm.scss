@@ -1,31 +1,49 @@
 @import '../../scss/commons/commons.scss';
+.app-name {
+  width: fit-content;
+  align-self: flex-end;
+  h2 {
+    color: $font-dark;
+    top: 0;
+    font-family: $font-family-app;
+    // text-align: right;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+  }
+}
 .LoginForm {
-  height: 100%;
+  min-height: 90%;
+  max-height: 90%;
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   h1 {
     text-align: center;
-    margin: 3.5rem auto;
   }
   form {
     width: 100%;
     display: flex;
+    gap: 0.5rem;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     .login-input-group {
       position: relative;
       width: 90%;
       min-width: 13rem;
-      margin: 1.5rem 0.2rem;
       label {
         margin: 0.4rem auto;
-        font-size: 1.5rem;
+        font-size: 1.1rem;
+        // font-weight: 500;
       }
 
       input {
         width: 100%;
-        padding: 1.1rem 1rem;
+        padding: 0.5rem 1rem;
         background-color: $background-light;
         color: $font-dark;
         font-size: 1.1rem;
@@ -38,12 +56,12 @@
         }
       }
       input[type='password'] {
-        padding: 1.1rem 3.8rem 1.1rem 1rem;
+        padding: 0.5rem 3.8rem 0.5rem 1rem;
       }
       svg {
         position: absolute;
         font-size: 2rem;
-        top: 50%;
+        top: 35%;
         right: 1.8%;
         // transform: translateY(-50%);
         cursor: pointer;
@@ -55,10 +73,15 @@
           content: '*';
         }
       }
+      &.password {
+        input {
+          padding: 0.5rem 3.8rem 0.5rem 1rem;
+        }
+      }
     }
     .error-out {
-      align-self: flex-start;
-      margin: -1.5rem 0 0 3.1rem;
+      align-self: flex-end;
+      // margin: -0.5rem 0 0 2.5rem;
       color: $font-red;
       &::before {
         content: '*';
@@ -76,15 +99,13 @@
     }
     .buttons {
       width: 100%;
-      margin: 10% auto;
       text-align: center;
       button {
         cursor: pointer;
-        width: 60%;
+        width: 20%;
         min-width: 13rem;
-        padding: 1rem;
+        padding: 0.5rem 1rem;
         font-size: 1.2rem;
-        margin: 0.6rem 0.2rem 0 0.2rem;
         border: solid 2px $border-primary;
         border-radius: 0.4rem;
         background-color: $background-primary;

@@ -1,3 +1,5 @@
 export { default as logo_nh_negative } from './png/logo_nh_negative.png'
+export { default as mar_logo_negative } from './png/MAR_logo.png'
+export { default as tracto_parts } from './png/fondo3.png'
 export { default as user_side_bar } from './png/user_side_bar.png'
 export { default as user } from './user.svg'
